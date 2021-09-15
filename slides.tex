@@ -13,26 +13,257 @@
 \begin{document}
 
 
-% -----
-% Frame 
-% -----
-
 \begin{frame}
+
+	% LaTex tutorial
+	% https://www.youtube.com/watch?v=0fsWGg81RwU
 
 	\titlepage
 
 \end{frame}
 
 
+\begin{frame}{Inspiration}
 
-% -----
-% Frame 
-% -----
+	% https://www.youtube.com/watch?v=Bt-vmPC_-Ho
+	% Add a pic from ^^
 
-\begin{frame}{Slide 1}
+	We can have nice things - \em{Justin M. Keyes}
 
-	% Watch this
-	% https://www.youtube.com/watch?v=0fsWGg81RwU
+	It says on the hat: \em{hyperextensible} Vim-based text editor
+
+\end{frame}
+
+
+\begin{frame}{My Background}
+
+	\begin{enumerate}
+
+		\item Former emacs programmer
+
+		\item Did two webdev internships
+
+		\item Polyglot dayjob, heavily into devops
+
+		\item Switched to nvim because emacs was insane
+
+		      % cue Thanks lxz (lxz is a good friend of mine, she introduced me to Nvim)
+
+	\end{enumerate}
+
+
+\end{frame}
+
+
+\begin{frame}{Nvim Brings Structure}
+
+	VimL -> Lua -> ???
+
+	Less structure -> more structure
+
+	More chaos -> less chaos
+
+	\begin{enumerate}
+
+		\item Vimscript the hardway
+
+		      % lxz : why not lua?
+
+		\item Library enabling async await in lua (Structured Concurrency)
+
+		      % https://github.com/ms-jpq/lua-async-await
+
+		\item CHADTree (Structured rendering)
+
+		      % https://github.com/ms-jpq/chadtree
+
+		\item coq.nvim (Structured plugins)
+
+		      % https://github.com/ms-jpq/coq_nvim
+
+	\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{VimL vs Lua}
+
+	VimL
+
+	\begin{enumerate}
+
+		\item Shove things into registers
+
+		\item Invoke key sequences
+
+		\item Esoteric regexes
+
+		\item Footguns
+
+		      % Case sensitive == -> worse than JS
+
+	\end{enumerate}
+
+
+	Lua
+
+	\begin{enumerate}
+
+		\item You don't have to do the things above
+
+		      % Maintainability
+
+	\end{enumerate}
+
+
+
+\end{frame}
+
+
+\begin{frame}{Structured Concurrency}
+
+	Libuv (same as in node) -> super powerful
+
+	% Too hard to use in lua?
+
+	\begin{enumerate}
+
+		\item Callback hell
+
+		\item Coroutines "too hard" to use
+
+	\end{enumerate}
+
+	% Don't spend too much time on this, it's 
+
+	So I wrote \em{async await} as a library
+
+	% Same idea as clojure core.async
+
+\end{frame}
+
+
+
+\begin{frame}{CHADTree: Notable Features}
+
+
+	\begin{enumerate}
+
+		\item Feature 1
+
+		\item Feature 2
+
+		\item Feature 3
+
+	\end{enumerate}
+
+
+\end{frame}
+
+
+\begin{frame}{coq.nvim: Notable Features}
+
+
+	\begin{enumerate}
+
+		\item Feature 1
+
+		\item Feature 2
+
+		\item Feature 3
+
+	\end{enumerate}
+
+
+\end{frame}
+
+
+\begin{frame}{coq.nvim: Notable Features}
+
+
+	\begin{enumerate}
+
+		\item Feature 1
+
+		\item Feature 2
+
+		\item Feature 3
+
+	\end{enumerate}
+
+
+\end{frame}
+
+
+
+\begin{frame}{CHADTree Observations}
+
+
+	\begin{enumerate}
+
+		\item File system walking is very fast
+
+		\item Rendering is slow
+
+		\item Extensible filemanagers are the slowest
+
+	\end{enumerate}
+
+
+\end{frame}
+
+
+\begin{frame}{CHADTree Solutions}
+
+
+	\begin{enumerate}
+
+		\item Do the opposite of UNIX "philosophy"
+
+		      % Pull other plugins into CHADTree, instead of the other way around
+
+		\item AOT compile other plugins into CHADTree
+
+		\item React
+
+		      % Wrote a 70 line typesafe React before, it's on my Github
+
+	\end{enumerate}
+
+
+\end{frame}
+
+
+
+\begin{frame}{Virtual Rendering Engine}
+
+
+	Two stage rendering
+
+	Virtual rendering target
+
+	\begin{enumerate}
+
+		\item Compute designed state
+
+
+		\item Compute linewise hash of desired state
+
+	\end{enumerate}
+
+
+	Actual rendering target
+
+	\begin{enumerate}
+
+		\item Fetch hash -> compute minimal diff
+
+
+		\item Apply patch onto buffers, store hash
+
+
+	\end{enumerate}
+
 
 \end{frame}
 
