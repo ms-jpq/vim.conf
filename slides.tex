@@ -265,6 +265,61 @@
 	\end{enumerate}
 
 
+	Side effect: can now perform (almost) transactional retries
+
+
+	% Lua is a very nice lang, but doing this is just too hard
+	% Transpilers do not seem super mature
+
+\end{frame}
+
+
+
+\begin{frame}{Going in the opposite direction}
+
+	Need to support third party plugins, but...
+
+	Notice a pattern here:
+
+	\begin{enumerate}
+
+		\item nvim-completion-manager -> ncm2
+
+		\item neocomplete.vim -> deoplete.nvim -> ddc.vim
+
+		\item nvim-compe -> nvim-cmp
+
+		\item completion-nvim :: still ok!
+
+		\item YouCompleteMe :: still ok!
+
+		\item coc :: going great!
+
+	\end{enumerate}
+
+
+\end{frame}
+
+
+
+\begin{frame}{The protocols of Nvim}
+
+	Protocols are meant to be ossified
+
+	Implementations are not
+
+	Some protocols inherent to Nvim
+
+	\begin{enumerate}
+
+		\item vim.bo.omnifunc
+
+		\item :h complete-items
+
+		\item vim.lsp.protocol
+
+	\end{enumerate}
+
 \end{frame}
 
 
