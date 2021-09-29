@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{multicol}
+\usepackage{soul} % strikethrough
 \graphicspath{ {./imgs/} }
 
 
@@ -14,7 +15,7 @@
 \title{We Have Built Nice Things}
 \subtitle{structured nvim plugins}
 \author{Wang, Hao}
-\institute{Lead Engineer @ Graveflex}
+\institute{Lead Engineer @ Graveflex | ms-jpq @ github | hola@bigly.dog}
 \date{}
 
 
@@ -152,217 +153,233 @@
 \end{frame}
 
 
-\begin{frame}{Novelty Tolerance}
+\begin{frame}{Tolerance for Heresy}
 
 	Beyond just the API, but also the \textbf{culture too}
 
 	\rule{\textwidth}{0.1em}
 
-	Follow the leader
-
-\end{frame}
-
-
-\begin{frame}{What Programmers Like}
-
-	\textbf{Structure \& Regularity}
-
-	\includegraphics[width=\textwidth]{rice_paddy}
-
-	\textit{thousand year old rice paddy}
-
-\end{frame}
-
-
-\begin{frame}{Structurizing}
-
-
-	% \begin{itemize}
-
-	% 	\item Vimscript the hardway
-
-	% 	      % lxz : why not lua?
-
-	% 	\item Library enabling async await in lua (Structured Concurrency)
-
-	% 	      % https://github.com/ms-jpq/lua-async-await
-
-	% 	\item CHADTree (Structured rendering)
-
-	% 	      % https://github.com/ms-jpq/chadtree
-
-	% 	\item coq.nvim (Structured plugins)
-
-	% 	      % https://github.com/ms-jpq/coq_nvim
-
-	% \end{itemize}
-
-
-	% \begin{enumerate}
-
-	% 	\item Shove things into registers
-
-	% 	\item Invoke key sequences
-
-	% 	\item Esoteric regexes
-
-	% 	\item Footguns
-
-	% 	      % Case sensitive == -> worse than JS
-
-	% \end{enumerate}
-
-	Libuv (same as in node) -> super powerful
-
-	% Too hard to use in lua?
+	\textbf{Wait, you can do that??}
 
 	\begin{enumerate}
 
-		\item Callback hell
+		\item nvim = OS for TUI
 
-		\item Coroutines "too hard" to use
+		\item buffers = render targets
+
+		\item architecture <- react + redux, data driven
+
+		\item "AOT compiled, statically linked"
+
+		\item Well defined protocols
 
 	\end{enumerate}
-
-	% Don't spend too much time on this, it's 
-
-	So I wrote \textit{async await} as a library
-
-	% Same idea as clojure core.async
 
 \end{frame}
 
 
+\begin{frame}{Yes We Can}
 
-\begin{frame}{CHADTree: Notable Features}
+	Short detour
+
+	\rule{\textwidth}{0.1em}
+
+	Lua is awesome
+
+	You can write \textit{async await} as a \textbf{library}, (first class coroutines)
+
+	https://github.com/ms-jpq/lua-async-await
+
+\end{frame}
+
+% \begin{frame}{What Programmers Like}
+
+% 	\textbf{Structure \& Regularity}
+
+% 	\includegraphics[width=\textwidth]{rice_paddy}
+
+% 	\textit{thousand year old rice paddy}
+
+% \end{frame}
 
 
-	\begin{enumerate}
+\begin{frame}{AOT Static Linking}
 
-		\item Feature 1
+	\begin{block}{\st{Extensibility} Kitchen sink}
 
-		\item Feature 2
+		\vspace{0.5em}
 
-		\item Feature 3
+		Do one \st{thing} \textbf{domain} and do it well.
 
-	\end{enumerate}
+		\vspace{0.5em}
 
+	\end{block}
+
+	Bake related features into single plugin
+
+	\rule{\textwidth}{0.1em}
+
+	Still "composible"
+
+	\begin{itemize}
+
+		\item pre-compile third party themes into json
+
+		\item pre-compile third party snippets into json
+
+		\item pre-compile ... into json
+
+	\end{itemize}
 
 \end{frame}
 
 
-\begin{frame}{coq.nvim: Notable Features}
+\begin{frame}{CHADTree}
 
+	https://github.com/ms-jpq/chadtree
 
-	\begin{enumerate}
+	\rule{\textwidth}{0.1em}
 
-		\item Feature 1
+	\begin{itemize}
 
-		\item Feature 2
+		\begin{multicols}{2}
+  	
+			\item visual multi selection
 
-		\item Feature 3
+			\item persistent selection across copy / move
 
-	\end{enumerate}
+			\item quickfix highlight
 
+			\item glob filtering
 
-\end{frame}
+			\item trash bin
 
+			\item open with sys
 
-\begin{frame}{coq.nvim: Notable Features}
+			\item ls -l
 
+			\item follow mode
 
-	\begin{enumerate}
+			\item version control status
 
-		\item Feature 1
+			\item \$LS\_COLOUR theming
 
-		\item Feature 2
+			\item icons out of box
 
-		\item Feature 3
+			\item github derived language colouring
 
-	\end{enumerate}
+			\item session support
 
+			\item typed config parser
+  	
+		\end{multicols}
 
-\end{frame}
-
-
-
-\begin{frame}{CHADTree Observations}
-
-
-	\begin{enumerate}
-
-		\item File system walking is very fast
-
-		\item Rendering is slow
-
-		\item Extensible filemanagers are the slowest
-
-	\end{enumerate}
-
+	\end{itemize}
 
 \end{frame}
 
 
-\begin{frame}{CHADTree Solutions}
+\begin{frame}{Faster than LUA}
 
+	\begin{block}{Observations}
 
-	\begin{enumerate}
+		\begin{enumerate}
 
-		\item Do the opposite of UNIX "philosophy"
+			\item File system walking is very fast
 
-		      % Pull other plugins into CHADTree, instead of the other way around
+			\item Rendering is slow
 
-		\item AOT compile other plugins into CHADTree
+			\item Filemanager plugins cause dramatic slowdowns
 
-		\item React
+		\end{enumerate}
 
-		      % Wrote a 70 line typesafe React before, it's on my Github
+	\end{block}
 
-	\end{enumerate}
+	\begin{block}{Solution}
 
+		\begin{itemize}
+
+			\item Pull in plugin functionalities
+
+			\item Minimize rendering
+
+		\end{itemize}
+ 	
+	\end{block}
+
+	Big tradeoff: lose extensibility
+
+	Big win: no ossification
 
 \end{frame}
 
 
+\begin{frame}{React Redux}
 
-\begin{frame}{Virtual Rendering Engine}
+	I wrote a \textbf{70 line} React before, it's not hard:
 
+	https://github.com/ms-jpq/noact
 
-	Two stage rendering
+	\rule{\textwidth}{0.1em}
 
-	Virtual rendering target
+	Virtual rendering target (store desired state)
 
 	\begin{enumerate}
 
 		\item Compute designed state
 
-
 		\item Compute linewise hash of desired state
 
 	\end{enumerate}
 
-
-	Actual rendering target
+	Actual rendering target (apply state to buffers)
 
 	\begin{enumerate}
 
 		\item Fetch hash -> compute minimal diff
 
-
 		\item Apply patch onto buffers, store hash
-
 
 	\end{enumerate}
 
-
-	Side effect: can now perform (almost) transactional retries
-
-
-	% Lua is a very nice lang, but doing this is just too hard
-	% Transpilers do not seem super mature
-
 \end{frame}
 
+
+\begin{frame}{COQ.nvim}
+
+	Fast AF auto completion
+
+	https://github.com/ms-jpq/coq_nvim
+	
+	\begin{block}{Observations}
+
+		\begin{itemize}
+
+			\item Computers are \textit{fast}, humans are \textit{slow}
+
+			\item Typos happen frequently
+
+			\item Completion menu is ad hoc doc viewer
+
+		\end{itemize}
+ 	
+	\end{block}
+
+	\rule{\textwidth}{0.1em}
+
+	Design goals
+
+	\begin{itemize}
+
+		\item High quality ranking
+
+		\item Fuzzy algorithms
+
+		\item As much information as possible
+
+	\end{itemize}
+
+\end{frame}
 
 
 \begin{frame}{Going in the opposite direction}
@@ -414,9 +431,7 @@
 
 \begin{frame}[standout]
 
-	questions, comments, stuff
-
-	hola@bigly.dog
+	Q \& A
 
 \end{frame}
 
