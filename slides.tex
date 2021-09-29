@@ -1,10 +1,18 @@
 \documentclass{beamer}
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{multicol}
+\graphicspath{ {./imgs/} }
 
+
+\usetheme{metropolis}
 \usecolortheme{seahorse}
+\setbeamertemplate{frame numbering}[fraction]
+\metroset{block=fill}
+
 
 \title{We Have Built Nice Things}
-%\subtitle{}
+\subtitle{structured nvim plugins}
 \author{Wang, Hao}
 \institute{Lead Engineer @ Graveflex}
 \date{}
@@ -25,100 +33,184 @@
 
 \begin{frame}{Inspiration}
 
-	% https://www.youtube.com/watch?v=Bt-vmPC_-Ho
-	% Add a pic from ^^
+	We can have nice things - \textit{Justin M. Keyes}
 
-	We can have nice things - \em{Justin M. Keyes}
+	\vspace{1em}
 
-	It says on the hat: \em{hyperextensible} Vim-based text editor
-
-\end{frame}
-
-
-\begin{frame}{My Background}
-
-	\begin{enumerate}
-
-		\item Former emacs user
-
-		\item Switched to nvim because emacs was insane
-
-		\item C-x C-c
-
-		      % cue Thanks lxz (lxz is a good friend of mine, she introduced me to Nvim)
-
-	\end{enumerate}
-
+	\includegraphics[width=\textwidth]{we_can_have_nice}
 
 \end{frame}
 
 
-\begin{frame}{Nvim Brings Structure}
+\begin{frame}{Why Nvim?}
 
-	VimL -> Lua -> ???
+	I wanted to replace emacs
 
-	Less structure -> more structure
+	\vspace{1em}
 
-	More chaos -> less chaos
+	\includegraphics[width=\textwidth]{home_page}
 
-	\begin{enumerate}
+	\vspace{1em}
 
-		\item Vimscript the hardway
-
-		      % lxz : why not lua?
-
-		\item Library enabling async await in lua (Structured Concurrency)
-
-		      % https://github.com/ms-jpq/lua-async-await
-
-		\item CHADTree (Structured rendering)
-
-		      % https://github.com/ms-jpq/chadtree
-
-		\item coq.nvim (Structured plugins)
-
-		      % https://github.com/ms-jpq/coq_nvim
-
-	\end{enumerate}
+	...and make CLI as easy as VSCode
 
 \end{frame}
 
 
-\begin{frame}{VimL vs Lua}
+\begin{frame}{Vim "philosophy"}
 
-	VimL
+	\begin{itemize}
 
-	\begin{enumerate}
+		\begin{multicols}{2}
 
-		\item Shove things into registers
+			\item unix-y
 
-		\item Invoke key sequences
+			\item ad hoc
 
-		\item Esoteric regexes
+			\item macro driven
 
-		\item Footguns
+			\item minimalist
 
-		      % Case sensitive == -> worse than JS
+			\item extensible
 
-	\end{enumerate}
+			\item composible
 
+			\item conservative
 
-	Lua
+		\end{multicols}
 
-	\begin{enumerate}
+	\end{itemize}
 
-		\item You don't have to do the things above
+	\rule{\textwidth}{0.1em}
 
-		      % Maintainability
+	\textbf{But at what cost?}
 
-	\end{enumerate}
+	\begin{itemize}
 
+		\begin{multicols}{2}
+
+			\item slowiness
+
+			\item jankiness
+
+			\item ossification
+
+			\item interlocking
+
+			\item beginner hostile
+
+			\item dx hostile
+
+		\end{multicols}
+
+	\end{itemize}
 
 
 \end{frame}
 
 
-\begin{frame}{Structured Concurrency}
+\begin{frame}{Terraforming Nvim}
+	
+	\begin{block}{Terraforming}
+
+		\vspace{0.5em}
+
+		Making nvim more hospitable for developers
+
+		\vspace{0.5em}
+
+	\end{block}
+
+	\rule{\textwidth}{0.1em}
+
+	\begin{itemize}
+
+		\begin{multicols}{2}
+
+			\item lua
+			
+			\item vim.api.nvim\_*
+
+			\item API clients
+
+			\item tree-sitter
+
+			\item libuv
+
+			\item extmarks
+
+			\item virtual text
+
+			\item remote UI
+
+		\end{multicols}
+
+	\end{itemize}
+
+	... and more 
+
+\end{frame}
+
+
+\begin{frame}{Novelty Tolerance}
+
+	Beyond just the API, but also the \textbf{culture too}
+
+	\rule{\textwidth}{0.1em}
+
+	Follow the leader
+
+\end{frame}
+
+
+\begin{frame}{What Programmers Like}
+
+	\textbf{Structure \& Regularity}
+
+	\includegraphics[width=\textwidth]{rice_paddy}
+
+	\textit{thousand year old rice paddy}
+
+\end{frame}
+
+
+\begin{frame}{Structurizing}
+
+
+	% \begin{itemize}
+
+	% 	\item Vimscript the hardway
+
+	% 	      % lxz : why not lua?
+
+	% 	\item Library enabling async await in lua (Structured Concurrency)
+
+	% 	      % https://github.com/ms-jpq/lua-async-await
+
+	% 	\item CHADTree (Structured rendering)
+
+	% 	      % https://github.com/ms-jpq/chadtree
+
+	% 	\item coq.nvim (Structured plugins)
+
+	% 	      % https://github.com/ms-jpq/coq_nvim
+
+	% \end{itemize}
+
+
+	% \begin{enumerate}
+
+	% 	\item Shove things into registers
+
+	% 	\item Invoke key sequences
+
+	% 	\item Esoteric regexes
+
+	% 	\item Footguns
+
+	% 	      % Case sensitive == -> worse than JS
+
+	% \end{enumerate}
 
 	Libuv (same as in node) -> super powerful
 
@@ -134,7 +226,7 @@
 
 	% Don't spend too much time on this, it's 
 
-	So I wrote \em{async await} as a library
+	So I wrote \textit{async await} as a library
 
 	% Same idea as clojure core.async
 
@@ -299,7 +391,6 @@
 \end{frame}
 
 
-
 \begin{frame}{The protocols of Nvim}
 
 	Protocols are meant to be ossified
@@ -317,6 +408,15 @@
 		\item vim.lsp.protocol
 
 	\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}[standout]
+
+	questions, comments, stuff
+
+	hola@bigly.dog
 
 \end{frame}
 
