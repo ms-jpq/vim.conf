@@ -7,14 +7,13 @@ set -o pipefail
 cd "$(dirname "$0")" || exit 1
 
 
-FILE="$PWD/slides.tex"
 ARGS=(
-  --watch
-  "$FILE"
+  --exts
+  '.tex'
   --
   ~/.config/nvim/.vars/bin/tectonic
   --
-  "$FILE"
+  "$PWD/slides.tex"
 )
 
 exec watchexec "${ARGS[@]}"
