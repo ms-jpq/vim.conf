@@ -316,7 +316,7 @@
 
 \begin{frame}{React Redux}
 
-	I wrote a \textbf{70 line} React before, it's not hard:
+	I wrote a \textit{70 line} React before, it's not hard:
 
 	https://github.com/ms-jpq/noact
 
@@ -347,9 +347,9 @@
 
 \begin{frame}{COQ.nvim}
 
-	Fast AF auto completion
+	Fast AF auto completion, backed by \textit{SQLite}
 
-	https://github.com/ms-jpq/coq_nvim
+	https://github.com/ms-jpq/coq\_nvim
 	
 	\begin{block}{Observations}
 
@@ -361,34 +361,26 @@
 
 			\item Completion menu is ad hoc doc viewer
 
+			\item \textbf{Has to be extensible}
+
 		\end{itemize}
  	
 	\end{block}
 
 	\rule{\textwidth}{0.1em}
 
-	Design goals
-
-	\begin{itemize}
-
-		\item High quality ranking
-
-		\item Fuzzy algorithms
-
-		\item As much information as possible
-
-	\end{itemize}
+	Can't just AOT everything
 
 \end{frame}
 
 
-\begin{frame}{Going in the opposite direction}
+\begin{frame}{Ossification Kills}
 
 	Need to support third party plugins, but...
 
 	Notice a pattern here:
 
-	\begin{enumerate}
+	\begin{itemize}
 
 		\item nvim-completion-manager -> ncm2
 
@@ -398,33 +390,111 @@
 
 		\item completion-nvim :: still ok!
 
-		\item YouCompleteMe :: still ok!
+	\end{itemize}
 
-		\item coc :: going great!
+	Too big to rewrite:
 
-	\end{enumerate}
+	\begin{itemize}
 
+		\item YouCompleteMe
+
+		\item coc.nvim
+
+	\end{itemize}
 
 \end{frame}
 
 
-\begin{frame}{The protocols of Nvim}
+\begin{frame}{The Protocols of Nvim}
 
-	Protocols are meant to be ossified
+	Protocols are \textbf{meant to be ossified}
 
 	Implementations are not
 
+	\rule{\textwidth}{0.1em}
+
 	Some protocols inherent to Nvim
 
-	\begin{enumerate}
+	\begin{itemize}
 
 		\item vim.bo.omnifunc
 
 		\item :h complete-items
 
-		\item vim.lsp.protocol
+		\item \textbf{LSP}
 
-	\end{enumerate}
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Social Distancing}
+
+	Third party / lua sources \textbf{CAN NOT} call into coq.nvim
+
+	They register callbacks at well known locations
+
+	They communicate via existing protocols
+
+	\rule{\textwidth}{0.1em}
+
+	https://github.com/ms-jpq/coq.thirdparty
+
+\end{frame}
+
+
+\begin{frame}{Data Driven}
+	
+	Humans need to read completions
+
+	Optimization problem between \textbf{quality} \& \textbf{speed}
+
+	\rule{\textwidth}{0.1em}
+
+	\begin{multicols}{2}
+ 	
+		\textbf{Filtering}
+  	
+		Lowerbound on intersection size between multisets of text
+
+		\columnbreak
+		
+		\textbf{Ensemble Ranking}
+  	
+		Damerau–Levenshtein distance
+
+		Insertion recency
+
+		Text locality
+
+		...
+
+	\end{multicols}
+
+	Adjust both for lookahead
+
+\end{frame}
+
+
+\begin{frame}{Scheduling Principles}
+	
+	\begin{itemize}
+
+		\item Concurrency is not parallelism
+
+		\item Trade \textit{throughput} for \textit{latency}
+
+		\item Ubiquitous coroutine based lazy computation
+
+		\item Cancel culture
+
+		\item Flow control
+
+		\item Background caching
+
+		\item Soft deadlines
+
+	\end{itemize}
 
 \end{frame}
 
