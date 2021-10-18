@@ -310,6 +310,8 @@
 
 		\vspace{0.5em}
 
+		\textbf{Don't expose implementations}
+
 	\end{block}
 
 	\hspace{0.1em}
@@ -318,7 +320,7 @@
 
 	\begin{enumerate}
 
-		\item Scrapping
+		\item \st{Web} Vim Scrapping
 
 		\item Write it yourself (but do it good)
 
@@ -370,6 +372,13 @@
 \end{frame}
 
 
+\begin{frame}{\$LS\_COLORS}
+
+	\includegraphics[width=\textwidth,height=20em]{chadtree_ls}
+
+\end{frame}
+
+
 \begin{frame}{Faster than LUA}
 
 	\begin{block}{Observations}
@@ -380,17 +389,19 @@
 
 			\item Rendering is slow
 
-			\item Filemanager plugins cause dramatic slowdowns
+			\item Decoration plugins cause dramatic slowdowns
 
 		\end{enumerate}
 
 	\end{block}
 
+	\hspace{0.1em}
+
 	\begin{block}{Solution}
 
 		\begin{itemize}
 
-			\item Pull in plugin functionalities
+			\item Pull in decorations
 
 			\item Minimize rendering
 
@@ -398,14 +409,41 @@
 
 	\end{block}
 
-	Big tradeoff: lose extensibility
+\end{frame}
 
-	Big win: no ossification
+
+\begin{frame}{React!}
+
+	I wrote a \textit{70 line} React before, it's not hard:
+
+	https://github.com/ms-jpq/noact
+
+	\rule{\textwidth}{0.1em}
+
+	Virtual rendering target
+
+	\begin{enumerate}
+
+		\item Compute designed state
+
+		\item Compute linewise hash of desired state
+
+	\end{enumerate}
+
+	Actual rendering target (apply state to buffers)
+
+	\begin{enumerate}
+
+		\item Fetch hash -> compute minimal diff
+
+		\item Apply patch onto buffers, store hash
+
+	\end{enumerate}
 
 \end{frame}
 
 
-\begin{frame}{CHADTree}
+\begin{frame}{CHADTree: Other Features}
 
 	https://github.com/ms-jpq/chadtree
 
@@ -450,33 +488,15 @@
 \end{frame}
 
 
-\begin{frame}{React Redux}
+\begin{frame}{Config Parser}
 
-	I wrote a \textit{70 line} React before, it's not hard:
-
-	https://github.com/ms-jpq/noact
+	Type checker for plugin configuration
 
 	\rule{\textwidth}{0.1em}
 
-	Virtual rendering target (store desired state)
+	\includegraphics[width=\textwidth]{conf_parser}
 
-	\begin{enumerate}
-
-		\item Compute designed state
-
-		\item Compute linewise hash of desired state
-
-	\end{enumerate}
-
-	Actual rendering target (apply state to buffers)
-
-	\begin{enumerate}
-
-		\item Fetch hash -> compute minimal diff
-
-		\item Apply patch onto buffers, store hash
-
-	\end{enumerate}
+	Added extra "dog" key
 
 \end{frame}
 
@@ -487,25 +507,11 @@
 
 	https://github.com/ms-jpq/coq\_nvim
 
-	\begin{block}{Observations}
-
-		\begin{itemize}
-
-			\item Computers are \textit{fast}, humans are \textit{slow}
-
-			\item Typos happen frequently
-
-			\item Completion menu is ad hoc doc viewer
-
-			\item \textbf{Has to be extensible}
-
-		\end{itemize}
-
-	\end{block}
-
 	\rule{\textwidth}{0.1em}
 
 	Can't just AOT everything
+
+	\textbf{Has to be extensible}
 
 \end{frame}
 
@@ -568,9 +574,9 @@
 
 	Third party / lua sources \textbf{CAN NOT} call into coq.nvim
 
-	They register callbacks at well known locations
+	They register callbacks at well known locations (Vim Tradition)
 
-	They communicate via existing protocols
+	Callbacks communicate via existing protocols
 
 	\rule{\textwidth}{0.1em}
 
@@ -579,40 +585,93 @@
 \end{frame}
 
 
-\begin{frame}{Data Driven}
+\begin{frame}[standout]
 
-	Humans need to read completions
+	I am probably short on time.
 
-	Optimization problem between \textbf{quality} \& \textbf{speed}
+\end{frame}
+
+
+\begin{frame}{Humans Suck}
+
+	Designing for meatbags.
 
 	\rule{\textwidth}{0.1em}
 
-	\begin{multicols}{2}
+	\begin{block}{Observations}
 
-		\textbf{Filtering}
+		\begin{itemize}
 
-		Lowerbound on intersection size between multisets of text
+			\item Computers are \textit{fast}, humans are \textit{slow}
 
-		\columnbreak
+			\item Typos happen frequently
 
-		\textbf{Ensemble Ranking}
+			\item Humans have low working memory
 
-		Damerau–Levenshtein distance
+		\end{itemize}
 
-		Insertion recency
+	\end{block}
 
-		Text locality
+	Worth breaking traditions...
 
-		...
+\end{frame}
 
-	\end{multicols}
 
-	Adjust both for lookahead
+\begin{frame}{Speed of Humans}
+
+	Optimization problem:
+
+	\rule{\textwidth}{0.1em}
+
+	\begin{itemize}
+
+		\item Humans are slow readers \& bad typers
+
+		\item Relevant results paramount\footnote{Larry Page $\approx$ 120B}
+
+		\item Must tolerate errors
+
+		\item Trade machine time for human time.
+
+	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Data Driven}
+
+	Link to algorithm
+
+	https://github.com/ms-jpq/coq\_nvim/blob/coq/docs/FUZZY.md
+
+	\rule{\textwidth}{0.1em}
+
+	Borrows from ML's data processing stages
+
+	Tunable params
+
+\end{frame}
+
+
+\begin{frame}{Meat CPU}
+
+	Low on L1 cache
+
+	\includegraphics[width=\textwidth]{chadtree_ls}
+
+\end{frame}
+
+
+\begin{frame}{REPL}
+
+	\includegraphics[width=\textwidth]{chadtree_ls}
 
 \end{frame}
 
 
 \begin{frame}{Scheduler}
+
+	It's own talk
 
 	\begin{itemize}
 
