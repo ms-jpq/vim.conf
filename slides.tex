@@ -15,7 +15,7 @@
 
 
 \title{We Have Built Nice Things}
-\subtitle{structured nvim plugins}
+\subtitle{Structured Nvim Plugins}
 \author{Wang, Hao}
 \institute{Lead Engineer @ Graveflex | ms-jpq @ github | hola@bigly.dog}
 \date{}
@@ -38,9 +38,13 @@
 
 	Wrong employer on speakers list
 
+	\rule{\textwidth}{0.1em}
+
 	Worked for \textit{SunCloud} not \textit{SoundCloud}
 
-	Now works at Graveflex
+	\hspace{0.1em}
+
+	Now works at \textbf{Graveflex}
 
 \end{frame}
 
@@ -66,7 +70,6 @@
 
 	\vspace{1em}
 
-
 \end{frame}
 
 
@@ -80,13 +83,14 @@
 
 		\item CHADTree
 
-			File manager
+		      File manager
 
-		\hspace{0.1em}
+		      \hspace{0.1em}
 
 		\item COQ.nvim
 
-			Auto completion
+		      Auto completion
+
 	\end{itemize}
 
 	\rule{\textwidth}{0.1em}
@@ -108,7 +112,7 @@
 
 
 \begin{frame}{Terraforming Nvim}
-	
+
 	\begin{block}{Terraforming}
 
 		\vspace{0.5em}
@@ -126,7 +130,7 @@
 		\begin{multicols}{2}
 
 			\item lua
-			
+
 			\item vim.api.nvim\_*
 
 			\item API clients
@@ -145,7 +149,7 @@
 
 	\end{itemize}
 
-	... and more 
+	... and more
 
 \end{frame}
 
@@ -193,9 +197,10 @@
 
 	\end{itemize}
 
-	\rule{\textwidth}{0.1em}
+\end{frame}
 
-	\textbf{But at what cost?}
+
+\begin{frame}{Weight of History}
 
 	\begin{itemize}
 
@@ -216,6 +221,42 @@
 		\end{multicols}
 
 	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Browser for the TUI}
+
+	Nvim encourages client-server architecture
+
+	\rule{\textwidth}{0.1em}
+
+	\begin{block}{Official API Clients}
+
+		\begin{itemize}
+
+			\begin{multicols}{2}
+
+				\item go
+
+				\item ruby
+
+				\item python
+
+				\item node
+
+			\end{multicols}
+
+		\end{itemize}
+
+	\end{block}
+
+	And tons and tons of unofficial ones..
+
+\end{frame}
+
+
+\begin{frame}{Why so Few Plugins w/ Client Server Architecture?}
 
 
 \end{frame}
@@ -302,7 +343,7 @@
 			\item Minimize rendering
 
 		\end{itemize}
- 	
+
 	\end{block}
 
 	Big tradeoff: lose extensibility
@@ -321,7 +362,7 @@
 	\begin{itemize}
 
 		\begin{multicols}{2}
-  	
+
 			\item visual multi selection
 
 			\item persistent selection across copy / move
@@ -349,7 +390,7 @@
 			\item session support
 
 			\item typed config parser
-  	
+
 		\end{multicols}
 
 	\end{itemize}
@@ -393,7 +434,7 @@
 	Fast AF auto completion, backed by \textit{SQLite}
 
 	https://github.com/ms-jpq/coq\_nvim
-	
+
 	\begin{block}{Observations}
 
 		\begin{itemize}
@@ -407,7 +448,7 @@
 			\item \textbf{Has to be extensible}
 
 		\end{itemize}
- 	
+
 	\end{block}
 
 	\rule{\textwidth}{0.1em}
@@ -487,7 +528,7 @@
 
 
 \begin{frame}{Data Driven}
-	
+
 	Humans need to read completions
 
 	Optimization problem between \textbf{quality} \& \textbf{speed}
@@ -495,15 +536,15 @@
 	\rule{\textwidth}{0.1em}
 
 	\begin{multicols}{2}
- 	
+
 		\textbf{Filtering}
-  	
+
 		Lowerbound on intersection size between multisets of text
 
 		\columnbreak
-		
+
 		\textbf{Ensemble Ranking}
-  	
+
 		Damerau–Levenshtein distance
 
 		Insertion recency
@@ -520,7 +561,7 @@
 
 
 \begin{frame}{Scheduler}
-	
+
 	\begin{itemize}
 
 		\item Concurrency is not parallelism
@@ -543,7 +584,7 @@
 
 
 \begin{frame}{Still AOT}
-	
+
 	The most completion sources out of the box
 
 	\begin{itemize}
@@ -578,7 +619,7 @@
 		\item Nvim LUA API
 
 		\item Scientific calculator
-		
+
 		\item Commented banner
 
 	\end{itemize}
@@ -595,6 +636,19 @@
 	Reproducible Docker based tmux typist
 
 	Kernel density estimates
+
+\end{frame}
+
+
+\begin{frame}{Tying the Knot}
+
+	\centering
+
+	\Large{Technical Innovation $\cup$ Cultural Innovation}
+
+	\rule{\textwidth}{0.1em}
+
+	Nice things
 
 \end{frame}
 

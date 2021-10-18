@@ -12,6 +12,7 @@ ARGS=(
   '.tex'
   --
   ~/.config/nvim/.vars/bin/tectonic
+  --keep-intermediates
   --
   "$PWD/slides.tex"
 )
