@@ -150,6 +150,25 @@
 \end{frame}
 
 
+\begin{frame}{Yes We Can}
+
+	Short detour
+
+	\rule{\textwidth}{0.1em}
+
+	Lua is powerful
+
+	You can write \textit{async await} as a \textbf{library}, (first class coroutines)
+
+	https://github.com/ms-jpq/lua-async-await
+
+	\hspace{0.1em}
+
+	\textit{(Like Clojure core.async)}
+
+\end{frame}
+
+
 \begin{frame}{Vim "philosophy"}
 
 	\begin{itemize}
@@ -227,21 +246,6 @@
 \end{frame}
 
 
-\begin{frame}{Yes We Can}
-
-	Short detour
-
-	\rule{\textwidth}{0.1em}
-
-	Lua is awesome
-
-	You can write \textit{async await} as a \textbf{library}, (first class coroutines)
-
-	https://github.com/ms-jpq/lua-async-await
-
-\end{frame}
-
-
 \begin{frame}{AOT Static Linking}
 
 	\begin{block}{\st{Extensibility} Kitchen sink}
@@ -269,6 +273,41 @@
 		\item pre-compile ... into json
 
 	\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{Faster than LUA}
+
+	\begin{block}{Observations}
+
+		\begin{enumerate}
+
+			\item File system walking is very fast
+
+			\item Rendering is slow
+
+			\item Filemanager plugins cause dramatic slowdowns
+
+		\end{enumerate}
+
+	\end{block}
+
+	\begin{block}{Solution}
+
+		\begin{itemize}
+
+			\item Pull in plugin functionalities
+
+			\item Minimize rendering
+
+		\end{itemize}
+ 	
+	\end{block}
+
+	Big tradeoff: lose extensibility
+
+	Big win: no ossification
 
 \end{frame}
 
@@ -314,41 +353,6 @@
 		\end{multicols}
 
 	\end{itemize}
-
-\end{frame}
-
-
-\begin{frame}{Faster than LUA}
-
-	\begin{block}{Observations}
-
-		\begin{enumerate}
-
-			\item File system walking is very fast
-
-			\item Rendering is slow
-
-			\item Filemanager plugins cause dramatic slowdowns
-
-		\end{enumerate}
-
-	\end{block}
-
-	\begin{block}{Solution}
-
-		\begin{itemize}
-
-			\item Pull in plugin functionalities
-
-			\item Minimize rendering
-
-		\end{itemize}
- 	
-	\end{block}
-
-	Big tradeoff: lose extensibility
-
-	Big win: no ossification
 
 \end{frame}
 
@@ -427,7 +431,7 @@
 
 		\item nvim-compe -> nvim-cmp
 
-		\item completion-nvim :: still ok!
+		\item completion-nvim -> \st{still ok!} \textit{archived}
 
 	\end{itemize}
 
