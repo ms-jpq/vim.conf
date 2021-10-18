@@ -235,11 +235,11 @@
 
 	\begin{enumerate}
 
-		\item nvim = OS for TUI
+		\item nvim = Browser for TUI
 
 		\item buffers = render targets
 
-		\item architecture <- react + redux, data driven
+		\item architecture <- systematic, data driven
 
 		\item "AOT compiled, statically linked"
 
@@ -291,6 +291,11 @@
 
 	\rule{\textwidth}{0.1em}
 
+	Need more than a faster horse
+
+	\hspace{0.1em}
+
+	Have to be \textbf{\textit{significantly better}}
 
 \end{frame}
 
@@ -307,19 +312,58 @@
 
 	\end{block}
 
-	Bake related features into single plugin
+	\hspace{0.1em}
+
+	Dual Approach:
+
+	\begin{enumerate}
+
+		\item Scrapping
+
+		\item Write it yourself (but do it good)
+
+	\end{enumerate}
+
+\end{frame}
+
+
+\begin{frame}{Ossification \textit{Good?}}
+
+	"Zero runtime cost" -- \st{rust} JSON
+
+	\begin{enumerate}
+
+		\item Compile \text{existing plugins} for artifacts
+
+		\item Dump them into a static file
+
+	\end{enumerate}
 
 	\rule{\textwidth}{0.1em}
 
-	Still "composible"
-
 	\begin{itemize}
 
-		\item pre-compile third party themes into json
+		\item CHADTree
 
-		\item pre-compile third party snippets into json
+		      \begin{itemize}
 
-		\item pre-compile ... into json
+			      \item 3 icon themes
+
+			      \item 9 colour themes
+
+			      \item 700+ language colours
+
+		      \end{itemize}
+
+		\item COQ.nvim
+
+		      \begin{itemize}
+
+			      \item 13,000+ snippets
+
+			      \item \textbf{zero runtime parse errors}
+
+		      \end{itemize}
 
 	\end{itemize}
 
