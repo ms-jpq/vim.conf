@@ -14,7 +14,7 @@ The main theme is as follows:
 
 - Bad traditions
 
-## Ecosystem
+## Prexisting Ecosystem
 
 Instead of being seen as a burden, view ossification of code as unoffical API.
 
@@ -28,11 +28,11 @@ Users want a faster horse, but a faster horse is not worth the pain of breaking 
 
 Need significant & obvious value proposition.
 
-## Future Proofing
+## Perpetual Greenfield
 
-Zero external API.
+Zero implementation exposure. Implementation exposure leads to stagnation.
 
-Putting users before other developers.
+Putting users before developers.
 
 ## Interoperability
 
