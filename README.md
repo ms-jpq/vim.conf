@@ -38,7 +38,9 @@ Putting users before developers.
 
 Communicate via Protocols (intentional or accidental), not implementations.
 
-Total inversion of control, impossible for thirdparty to import own code.
+Protocols succeed when ossified, implementations fail.
+
+Total inversion of control, impossible for thirdparty to import own code. Therefore prevention of being tied down
 
 ### Break these traditions
 
