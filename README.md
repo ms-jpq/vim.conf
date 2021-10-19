@@ -36,7 +36,7 @@ Putting users before developers.
 
 ### Interoperability
 
-Communicate via Protocols (intentional or accidental), not implementations.
+Communicate via existing Protocols (intentional or accidental), not implementations.
 
 Protocols succeed when ossified, implementations fail.
 
