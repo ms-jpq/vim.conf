@@ -1,6 +1,6 @@
 # Synopsis
 
-The challenges of updating a program with decades of legacy.
+The challenges of updating a program with decades of legacy and huge ecosystem around said legacy.
 
 The main theme is as follows:
 
@@ -50,4 +50,8 @@ Design must recognize human are slow, forgetful, and error prone.
 
 ## Misc
 
-Other cool things
+Other cool things that I want to talk more on, but cannot fit into 15 minutes.
+
+- Data driven text processing.
+
+- Task Scheduling
