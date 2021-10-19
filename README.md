@@ -18,7 +18,7 @@ The main theme is as follows:
 
 Instead of being seen as a burden, view ossification of code as unoffical API.
 
-Like a compiler, transform thirdparty code through into static bundles of JSON.
+Like a compiler, transform & pre-validate thirdparty code through into static bundles of JSON.
 
 Result: Zero runtime cost & Zero runtime error from thirdparty sources.
 
