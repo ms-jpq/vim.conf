@@ -18,7 +18,7 @@ The main theme is as follows:
 
 Instead of being seen as a burden, view ossification of code as unoffical API.
 
-Like a compiler, transform thirdparty code through into static bundles of JSON.
+Like a compiler, transform & pre-validate thirdparty code through into static bundles of JSON.
 
 Result: Zero runtime cost & Zero runtime error from thirdparty sources.
 
@@ -36,9 +36,11 @@ Putting users before developers.
 
 ### Interoperability
 
-Communicate via Protocols (intentional or accidental), not implementations.
+Communicate via existing Protocols (intentional or accidental), not implementations.
 
-Total inversion of control, impossible for thirdparty to import own code.
+Protocols succeed when ossified, implementations fail.
+
+Total inversion of control, impossible for thirdparty to import own code. Therefore prevention of being tied down
 
 ### Break these traditions
 
