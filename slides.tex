@@ -37,7 +37,7 @@
 
 	\rule{\textwidth}{0.1em}
 
-	Worked for \textit{SunCloud} not \textit{SoundCloud}
+	Worked at \textit{\textbf{Sun}Cloud} not \textit{\textbf{Sound}Cloud}
 
 \end{frame}
 
@@ -198,6 +198,13 @@
 \end{frame}
 
 
+\begin{frame}[standout]
+
+	Ossification of Ecosystem
+
+\end{frame}
+
+
 \begin{frame}{Vim "philosophy"}
 
 	\begin{itemize}
@@ -252,6 +259,30 @@
 \end{frame}
 
 
+\begin{frame}[standout]
+
+	Ossification of Habits
+
+\end{frame}
+
+
+\begin{frame}{Users, Users, Users}
+
+	\begin{block}{Cultural Terraforming}
+
+		\vspace{0.5em}
+
+		Realizing the benefits of change is a two way street
+
+		Need user buy in
+
+		\vspace{0.5em}
+
+	\end{block}
+
+\end{frame}
+
+
 \begin{frame}{Tolerance for Heresy}
 
 	Beyond just the API, but also the \textbf{culture too}
@@ -273,25 +304,6 @@
 		\item Well defined protocols
 
 	\end{enumerate}
-
-\end{frame}
-
-
-\begin{frame}{Users, Users, Users}
-
-	Ossification of user habits
-
-	\begin{block}{Cultural Terraforming}
-
-		\vspace{0.5em}
-
-		Realizing the benefits of change is a two way street
-
-		Need user buy in
-
-		\vspace{0.5em}
-
-	\end{block}
 
 \end{frame}
 
@@ -361,16 +373,9 @@
 \end{frame}
 
 
-\begin{frame}[standout]
+\begin{frame}{Do Different}
 
-	Not in LUA, more ambitious
-
-\end{frame}
-
-
-\begin{frame}{Broken Eggs}
-
-	\begin{block}{\st{Extensibility} Kitchen sink}
+	\begin{block}{Kitchen sink}
 
 		\vspace{0.5em}
 
@@ -456,7 +461,7 @@
 \end{frame}
 
 
-\begin{frame}{Faster than LUA}
+\begin{frame}{Python Faster than LUA?}
 
 	\begin{block}{Observations}
 
@@ -501,7 +506,7 @@
 
 	\begin{enumerate}
 
-		\item Compute designed state
+		\item Compute desired state
 
 		\item Compute linewise hash of desired state
 
@@ -513,7 +518,7 @@
 
 		\item Fetch hash -> compute minimal diff
 
-		\item Apply patch onto buffers, store hash
+		\item Apply patch onto buffers, store new hash
 
 	\end{enumerate}
 
@@ -624,6 +629,13 @@
 \end{frame}
 
 
+\begin{frame}[standout]
+
+	Move Fast Without Breaking Things
+
+\end{frame}
+
+
 \begin{frame}{The Protocols of Nvim}
 
 	Protocols are \textbf{meant to be ossified}
@@ -649,11 +661,15 @@
 
 \begin{frame}{Social Distancing}
 
+	No Importable Code
+
+	\rule{\textwidth}{0.1em}
+
 	Third party code \textbf{CAN NOT} call into coq.nvim
 
 	They register callbacks at well known locations (Vim Tradition)
 
-	Callbacks communicate via existing protocols
+	Callbacks communicate via \textbf{Existing} Protocols
 
 	\rule{\textwidth}{0.1em}
 
@@ -664,31 +680,47 @@
 
 \begin{frame}{PaaS}
 
-	\begin{enumerate}
+	What is the platform
 
-		\item Nvim is the platform
+	\rule{\textwidth}{0.1em}
 
-		\item Ecosystem is the platform
+	\begin{itemize}
 
-		\item Your app is not the platform
+		\item Your app is not the \textbf{platform}
 
-	\end{enumerate}
+		\item Nvim is the \textbf{platform}
 
-\end{frame}
+		\item Ecosystem is the \textbf{platform}
 
-
-\begin{frame}[standout]
-
-	I am probably short on time.
+	\end{itemize}
 
 \end{frame}
 
 
 \begin{frame}[standout]
 
-	Worse is not always better
+	Worse is Not Always Better
 
-	Worse is better for \textit{software} not \textit{wetware}
+\end{frame}
+
+
+\begin{frame}{When to Break Traditions}
+
+	Worse is better for \textbf{software} not \textbf{wetware}
+
+	\rule{\textwidth}{0.1em}
+
+	\begin{itemize}
+
+		\item Computers fast
+
+		\item Meatbags slow
+
+	\end{itemize}
+
+	\rule{\textwidth}{0.1em}
+
+	\st{Implementations Simplicity} Humans are not computers
 
 \end{frame}
 
@@ -739,9 +771,13 @@
 \end{frame}
 
 
-\begin{frame}{Data Driven}
+\begin{frame}{Data Driven Completion Ranking}
 
-	Link to algorithm
+	Robust against 2 character typos\footnote{except in first 2 characters}
+
+	\rule{\textwidth}{0.1em}
+
+	Link to 2 stage algorithm
 
 	https://github.com/ms-jpq/coq\_nvim/blob/coq/docs/FUZZY.md
 
@@ -749,16 +785,20 @@
 
 	Borrow ideas from ML's data processing
 
-	Tunable params
+	Weights, normalization \& sigmoid func adjust for user inputs
 
 \end{frame}
 
 
-\begin{frame}{COQ::Info}
+\begin{frame}{Provide as Much Info as Possible}
+
+	CTags
 
 	\includegraphics[width=\textwidth]{info_ctags}
 
-	\includegraphics[width=\textwidth,height=9em]{info_paths}
+	Paths
+
+	\includegraphics[keepaspectratio,width=\textwidth,height=9em]{info_paths}
 
 \end{frame}
 
@@ -781,11 +821,15 @@
 
 \begin{frame}{Scheduler}
 
-	\begin{center}
+	\begin{itemize}
 
-		Control \textbf{when} \& \textbf{if} work is performed
+		\item \textbf{What} is a unit of work?
 
-	\end{center}
+		\item \textbf{When} is work performed
+
+		\item \textbf{If} work is performed
+
+	\end{itemize}
 
 \end{frame}
 
