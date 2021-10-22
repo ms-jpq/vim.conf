@@ -42,7 +42,7 @@ Communicate via existing Protocols (intentional or accidental), not implementati
 
 Protocols succeed when ossified, implementations fail.
 
-Nvim is the platform, not your app.
+Nvim & ecosystem is the platform, not your app.
 
 Total inversion of control, impossible for thirdparty to import own code. Therefore prevention of being tied down
 
