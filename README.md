@@ -1,6 +1,6 @@
 # Synopsis
 
-The challenges of updating a program with decades of legacy and huge ecosystem around said legacy.
+The challenges of extending a program with decades of legacy and huge ecosystem around said legacy.
 
 The main theme is as follows:
 
@@ -30,6 +30,8 @@ Need significant & obvious value proposition.
 
 ### Perpetual Greenfield
 
+Move fast without breaking things.
+
 Zero implementation exposure. Implementation exposure leads to stagnation.
 
 Putting users before developers.
@@ -39,6 +41,8 @@ Putting users before developers.
 Communicate via existing Protocols (intentional or accidental), not implementations.
 
 Protocols succeed when ossified, implementations fail.
+
+Nvim is the platform, not your app.
 
 Total inversion of control, impossible for thirdparty to import own code. Therefore prevention of being tied down
 
