@@ -34,7 +34,7 @@ Move fast without breaking things.
 
 Zero implementation exposure. Implementation exposure leads to stagnation.
 
-Putting users before developers.
+Putting users (UX) before developers (API).
 
 ### Interoperability
 
