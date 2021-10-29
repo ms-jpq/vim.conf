@@ -316,17 +316,13 @@
 \end{frame}
 
 
-\begin{frame}{COQ.nvim}
-
-	Fast AF auto completion, backed by \textit{SQLite}
-
-	https://github.com/ms-jpq/coq\_nvim
-
-	\rule{\textwidth}{0.1em}
+\begin{frame}{Dynamic Linking}
 
 	Can't just AOT everything
 
-	\textbf{Has to be extensible}
+	\rule{\textwidth}{0.1em}
+
+	What about runtime interface?
 
 \end{frame}
 
@@ -390,24 +386,17 @@
 \end{frame}
 
 
-\begin{frame}{\$LS\_COLORS}
-
-	\includegraphics[width=\textwidth,height=20em]{chadtree_ls}
-
-\end{frame}
-
-
 \begin{frame}{Zero Public Code}
 
-	Third party code \textbf{CAN NOT} call into coq.nvim
+	\begin{enumerate}
 
-	They register callbacks at well known locations (Vim Tradition)
+		\item Third party code \textbf{CAN NOT} call into coq.nvim
 
-	Callbacks communicate via \textbf{Existing} Protocols
+		\item They register callbacks at well known locations (Vim Tradition)
 
-	\rule{\textwidth}{0.1em}
+		\item Callbacks communicate via LSP
 
-	https://github.com/ms-jpq/coq.thirdparty
+	\end{enumerate}
 
 \end{frame}
 
@@ -431,14 +420,21 @@
 \end{frame}
 
 
-\begin{frame}[standout]
+\begin{frame}{\$LS\_COLORS}
 
-	Worse is Not Always Better
+	\includegraphics[width=\textwidth,height=20em]{chadtree_ls}
 
 \end{frame}
 
 
-\begin{frame}{When to Break Traditions}
+\begin{frame}[standout]
+
+	When to Break Traditions
+
+\end{frame}
+
+
+\begin{frame}{Worse is Not Always Better}
 
 	Worse is better for \textbf{software} not \textbf{wetware}
 
@@ -484,34 +480,15 @@
 \end{frame}
 
 
-\begin{frame}{Speed of Humans}
-
-	Optimization problem:
-
-	\rule{\textwidth}{0.1em}
-
-	\begin{itemize}
-
-		\item Humans are slow readers \& bad typers
-
-		\item Relevant results paramount\footnote{Larry Page $\approx$ 120B}
-
-		\item Must tolerate errors
-
-		\item Trade machine time for human time.
-
-	\end{itemize}
-
-\end{frame}
-
-
 \begin{frame}{Data Driven Completion Ranking}
 
-	Robust against 2 character typos\footnote{except in first 2 characters}
+	Drop requirement for exact prefix match
 
 	\rule{\textwidth}{0.1em}
 
 	Link to 2 stage algorithm
+
+	Robust against 2 character typos\footnote{except in first 2 characters}
 
 	https://github.com/ms-jpq/coq\_nvim/blob/coq/docs/FUZZY.md
 
